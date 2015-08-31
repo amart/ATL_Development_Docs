@@ -1,0 +1,144 @@
+<span>0.75</span>
+
+'''The Analytics Template Library'''<br />
+''A Developer’s Guide''
+
+Matthew Supernaw<br />
+NOAA Fisheries
+
+<span>Version 1.0</span><br />
+
+
+August 2015
+
+= Introduction =
+
+The Analytics Template Library (ATL) is a generic scientific computing library that leverages the power of Template Metaprogramming for flexibility and speed. This guide is intended to give the user a basic understanding of how to develop programs in ATL. The information in this document is intended for anyone interested in scientific computing in C++ and it is expected that the reader will have a basic understanding of the C++ programming language, as well as scientific computing.
+
+= Template Metaprogramming =
+
+Template metaprogramming is a technique in which templates are used by the compiler to generate source code. This allows the developer to focus on the architecture and flow of the program and delegate any implementation required to the compiler. This technique has the benefit of reducing source code and development time. Here is an example of how template metaprogramming works in C++.
+
+/** * Generic Function to add two values. * * @param a * @param b * @return */ template&lt;class T&gt; T add(T a, T b) <span> return a + b; </span>
+
+double d = add&lt;double&gt;(1.01, 1.01); std::cout &lt;&lt; d &lt;&lt; “”;
+
+float f = add&lt;float&gt;(1.01f, 1.01f); std::cout &lt;&lt; f &lt;&lt; “”;
+
+int i = add&lt;int&gt;(1, 1); std::cout &lt;&lt; i &lt;&lt; “”;
+
+'''Output'''
+
+2.02 2.02 2
+
+As you can see, we have one template function that successfully handled three different data types. So, true to the nature of template metaprogramming, we have reduce the amout of source code required and thus reduced development time. Templates can also be applied to classes as well, for example the following will give us the identical output:
+
+template &lt;class T&gt; class Add<span> public: T Evaluate(T a, T b)<span> return a+b; </span> </span>;
+
+'''Output'''
+
+2.02 2.02 2
+
+== Expression Templates ==
+
+Expression templates is a template metaprogramming technique in which templates are used to represent part of an expression. The expression template can be evaluated at a later time, or even passed to a function. Expression templates are considered a source code optimization technique because there use reduces the amount of temporary variables created in a given calculation. Furthermore, expression templates are a special case of static polymorphism, this is a form of polymorphism that is handled at compile time, rather than runtime.
+
+= Automatic Differentiation =
+
+== Computing Derivatives ==
+
+=== Gradient Vectors ===
+
+=== Hessian Matrices ===
+
+== Controlling The Gradient Structure ==
+
+== Adjoint Entries ==
+
+= Containers =
+
+== Vectors ==
+
+== Matrices ==
+
+= Probability Distributions =
+
+== Probability Densities ==
+
+== Cumulative Probabilities ==
+
+== Inverse Cumulative Probabilities ==
+
+== Random Numbers ==
+
+== Distribution Objects ==
+
+== Available Distributions ==
+
+=== Beta ===
+
+=== Binomial ===
+
+=== Cauchy ===
+
+=== Chi-Square ===
+
+=== Exponential ===
+
+=== F ===
+
+=== Gamma ===
+
+=== Geometric ===
+
+=== Hypergeometric ===
+
+=== Logistic ===
+
+=== Log Normal ===
+
+=== Negative Binomial ===
+
+=== Normal ===
+
+=== Poisson ===
+
+=== Student’s t ===
+
+=== Weibull ===
+
+= Descriptive Statistics =
+
+= Optimization =
+
+== Function Minimization ==
+
+= Concurrency =
+
+== Concurrency For Containers ==
+
+== Concurrency AD Types ==
+
+=== Handling Threads With Shared Dependency ===
+
+= Graphics =
+
+== Line Plots ==
+
+== Scatter Plots ==
+
+== Pie Charts, Bar Plots, and Histograms ==
+
+== Vector Fields ==
+
+== Surfaces and Volumes ==
+
+= Future Work =
+
+== Random Effects Modelling ==
+
+== MPI ==
+
+= References =
+
+= Appendices =
