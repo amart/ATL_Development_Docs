@@ -21,7 +21,7 @@ Template metaprogramming is a technique in which templates are used by the compi
  <nowiki>
  Generic Function to add two values.
  
- template<class T> T add(T a, T b) { return a + b; }
+ template <class T> T add(T a, T b) { return a + b; }
  
  double d = add<double>(1.01, 1.01); std::cout << d << “”;
  
@@ -38,11 +38,15 @@ Template metaprogramming is a technique in which templates are used by the compi
 
 As you can see, we have one template function that successfully handled three different data types. So, true to the nature of template metaprogramming, we have reduce the amout of source code required and thus reduced development time. Templates can also be applied to classes as well, for example the following will give us the identical output:
 
-template &lt;class T&gt; class Add<span> public: T Evaluate(T a, T b)<span> return a+b; </span> </span>;
+ <nowiki>
+ template <class T> class Add { public: T Evaluate(T a, T b) { return a+b; } }
+ </nowiki>
 
 '''Output'''
 
-2.02 2.02 2
+ <nowiki>
+ 2.02 2.02 2
+ </nowiki>
 
 == Expression Templates ==
 
